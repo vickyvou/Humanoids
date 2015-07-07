@@ -176,7 +176,7 @@ The neuro-controller we are going to describe outputs $(x, y)$ coordinates insid
 
 The reactive controller provides the robot with two needs. The first one corresponds to a basic exploratory behavior which drives the robot to move the pen in random directions. A direction is defined by a random angle sampled uniformly in $[0, 2\pi]$ and a random distance  sampled from a normal distribution with mean \cmf{to fill} and standard deviation \cmf{to fill}. The second need is a reactive behavior which drives the robot hand to the starting position. This behavior is triggered by an input $h \in [0,1]$ to the reactive controller, such that the robot's hand moves to the center with a distance proportional to $h$, i.e. completely to the center when $h=1$ and at equidistance of the current hand position and the center when $h=0.5$. The safety behavior is only triggered when $h$ is above a small threshold $\epsilon$, otherwise the exploratory behavior operates in isolation. 
 
-At the reactive level, the safety behavior is triggered from the perception of a strong grasp on the robot's left arm, which activates the reactive controller input with $h=1$. In the terms of the biological background of section \ref{{sec:reactive_bio}, the grasping perception can be viewed as the crossing of the comfort zone boundary and the safety behavior as the reactive action supposed to bring the homeostatic variable back into the CZ.  This way, the robot performs random drawing when the pen is inside the shape and each time its goes outside of it, the human subject grasps the robot's left arm, which triggers in turn the safety behavior returning in the center of the working area.
+At the reactive level, the safety behavior is triggered from the perception of a strong grasp on the robot's left arm, which activates the reactive controller input with $h=1$. In the terms of the biological background of section \ref{sec:reactive_bio}, the grasping perception can be viewed as the crossing of the comfort zone boundary and the safety behavior as the reactive action supposed to bring the homeostatic variable back into the CZ.  This way, the robot performs random drawing when the pen is inside the shape and each time its goes outside of it, the human subject grasps the robot's left arm, which triggers in turn the safety behavior returning in the center of the working area.
 
 \subsection{Adaptive Controller}
 
@@ -186,7 +186,7 @@ The adaptive controller learns to anticipate the tactile feedback based on the p
 \begin{figure}[!t]
 \centering
 \includegraphics[width=8cm]{architecture}
-\caption{The robot cognitive architecture is based on two coupled control loop: a reactive and an adaptive one.}
+\caption{The robot cognitive architecture is based on two coupled control loop: a reactive and an adaptive one. The reactive controller inputs $h$, which is induced by human tactile feedback (US) and/or by its anticipated prediction from the adaptive controller, using contextual sensory cues (CS). The learning signal of the adaptive controller is the error given by $US - k_{noi}CR$, see text for details.}
 \label{fig:architecture}
 \end{figure}
 
