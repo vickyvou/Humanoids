@@ -170,7 +170,6 @@ Our experimental setup consists in a humanoid iCub robot, a 3D-printed pen, and 
 \end{figure}
 \cmf{todo: Here a picture of the whole setup, with legend indicating the iCub with the tactile skin and working arm, the Reactable, the pen, the working area, the shape to be painted}
 
- 
 The neuro-controller we are going to describe outputs $(x, y)$ coordinates inside the working area that the robot can reach by moving its whole body as instructed by the inverse-kinematics module. It consists in two coupled control loops: a reactive and an adaptive ones.
 
 \subsection{Reactive Controller}
@@ -181,7 +180,15 @@ At the reactive level, the safety behavior is triggered from the perception of a
 
 \subsection{Adaptive Controller}
 
-The adaptive controller learns to anticipate the tactile feedback based on the perception of the distance between the pen tip and the closest shape boundary. For this it simply acts as a linear regressor whose target signal is the negative reinforcement provided by the human. As bases of this approximation it uses a repertoire of time-varying signals that code contextual information, the analogue of CS in classical conditioning, which in this setup is provided by the distance between the pen and the closest boundary. 
+The adaptive controller learns to anticipate the tactile feedback based on the perception of the distance between the pen tip and the closest shape boundary. For this it simply acts as a linear regressor whose target signal is the negative reinforcement provided by the human. As bases of this approximation it uses a repertoire of time-varying signals that code contextual information, the analogue of CS in classical conditioning, which in this setup is provided by the distance between the pen and the closest boundary. How the adaptive controller is coupled with the reactive one is shown on Figure~\ref{fig:architecture}. 
+
+
+\begin{figure}[!t]
+\centering
+\includegraphics[width=8cm]{architecture}
+\caption{The robot cognitive architecture is based on two coupled control loop: a reactive and an adaptive one.}
+\label{fig:architecture}
+\end{figure}
 
 The generation of this context-coding signal comprises two steps. First $n$ \ih{to jordi: how many?} bases output a $1$ when the distance \ih{in pixels?} to the boundary is less than a given threshold value and $0$ otherwise, where each basis has a different threshold. This can then be interpreted as the controller receiving a set of CSs. Once these signals enter the adaptive controller, they are replicated n-times and passed through a series of double-convolutional filters with different temporal profiles (the details can be found in \ref{herreros2013speed}) to generate a series of diverse time-varying signals. We refer to these signals as \emph{cortical bases}. At time $t$, the vector $\mathbf{p}(t)$ contains the state of these bases. The output of the adaptive controller, that by analogy with the conditioning paradigm we refer to as $CR$ is equal to $\mathbf{p}(t)^T \mathbf{w}(t)$, where $\mathbf{w}(t)$ are the regression weights.
 
@@ -199,12 +206,6 @@ e(t) = US(t) - k_{noi} CR(t-\delta)
 
 This implies that the adaptive controller requires a degree of feedback to confirm the correctness of the anticipatory action, otherwise a negative error would be generated, proportional to the $k_{noi}$ factor, resulting in the extinction of the acquired behavior. In our setup, since the feedback is binary, this will lead to a non-zero error rate at learning asymptote. Note that the human reinforcement is compared not to the current output of the controller but to a preceding one at time $t-\delta$, denoting that if an error occurs at time $t$ it should have been prevented not by an action simultaneous to the error, but by one anticipated by $\delta$ seconds. In short, this $\delta$ sets the extent of the anticipation.
 
-\begin{figure}[!t]
-\centering
-\includegraphics[width=8cm]{architecture}
-\caption{.}
-\label{fig:architecture}
-\end{figure}
 
 %\subsection{Tying Everything Together}
 %In this article we present the combined model of using self-regulation or homeostasis as the generator of the signal that must be anticipated by the cerebellum. In this combination, we chose to use high level needs so that we can generalize 
@@ -214,8 +215,9 @@ This implies that the adaptive controller requires a degree of feedback to confi
 \section{Results}
 \label{sec:results}
 
-We instructed a human subjects to grasp the robot's upper left arm every time the pencil crossed the boundary of the shape, and release it after it entered back. For the first round of experiments, the shape was always a square. The subject was presented 10 times with the reactive controller and 10 with the adaptive controller on top of it. 
-Figure \ref{reactive} shows a sample of both conditions. One can observe increases in both, the number of times the robot received feedback and the amount of time spent on average with every feedback for the reactive condition with respect to the adaptive. \jp{Generate numbers!}. Comparing figures \ref{reactive} B and D show how
+We instructed a human subject to grasp the robot's upper left arm every time the pencil crossed the boundary of the shape, and release it after it entered back. For the first round of experiments, the shape was always a square. The subject was presented 10 times with the reactive controller and 10 with the adaptive controller on top of it. 
+Figure \ref{reactive} shows a sample of both conditions. One can observe increases in both, the number of times the robot received feedback and the amount of time spent on average with every feedback for the reactive condition with respect to the adaptive. \jp{Generate numbers!}. Comparing figures \ref{reactive} B and D show how, for a task that was only considering not going out of the borders of the shape, the adaptive controller (D) keeps the painting far form the borders, while the reactive (B) goes out numerous times. 
+Furthermore, we defined a measure of the error as the human feedback, or, what is the same, the error perceived by the human. We use this measure of error because, for this HRI task, where a human is teaching a robot, the task can be considered successful as soon as the teacher is 
 
 We instructed a human subject ...
 with details but not too much
@@ -232,7 +234,6 @@ Figure x shows ...
 
 
 
-
 \begin{figure}
 \centering
 \includegraphics[width=9cm]{error}
@@ -240,13 +241,27 @@ Figure x shows ...
 \label{fig:error}
 \end{figure}
 
-\section{Discussion}
+\begin{figure}
+\centering
+\includegraphics[width=9.5cm]{general}
+\caption{Add caption}
+\label{fig:general}
+\end{figure}
+
+\section{Conclusion and discussion}
+
+In this paper, we have proposed a biologically-grounded cognitive architecture based on a reactive control of hand movements from human feedback and an adaptive controller based on the prediction of that feedback from contextual sensory cues. The adaptive controller is based on an existing model of the cerebellum which learns in an on-line manner to predict an unconditioned stimuli US (the human feedback in our experiment) from a conditioned stimuli CS (the distance between the pen and the shape border). 
+
+The results show that the model is able to correctly anticipate the human feedback, allowing to anticipate the action allowing the iCub not to cross the shape border, subsequently reducing significantly the amount of feedback actually received from the human. Moreover, the model displays interesting generalization properties, where the behavior learned on painting a particular shape can be successfully reused for painting other kind of shapes. This is due to the contextual sensory cues that are provided to the robot which are not shape-dependent but rather based on the distance between the pen tip and the closest shape border. Altogether, these results support the hypothesis that the cerebellum can play a role in a social learning context when the learning is focused on the precise timing of actions, and that neurocomputational models of this brain structure can be successfully used in a human-robot interaction context.
+
+This model has a number of limitations that encourage further extensions. First, the reactive controller is quite simple, relying on to predefined behavior: exploring randomly or going back toward the center with a certain intensity. We are considering to extend this reactive controller to trigger more complex movement primitives related to drawing movements.  Second, we observe that the model is subject to forgetting what it has learnt before, which is a known issue but is actually coherent with animal behavior data (a phenomenon call "extinction" in the classical conditioning literature). However, in a human-robot social learning context as we proposed here, it is an important issue that requires further investigation. In the Distributed Adaptive Control framework from which the current cognitive architecture is derived, a contextual layer resides on top of the adaptive one to allow the storing and retrieval of acquired behavior in long-term memory, what could solve the forgetting issue.
 
 Being the error nonspecific, in the sense that it only signals the aversive state but it does not contain information about how to correct it, one could argue that a Reinforcement Learning (RL) paradigm would have been more adequate; but we justify in the following why this is not the case. Our problem here is to generate rapid anticipatory well-timed responses, which is precisely the role of a cerebellar like structure.
-
 The used cerebellar model \cite{herreros2013nucleo} is a supervised learning system that in our case is driven by a nonspecific error from human feedback. The trick is that learning is anticipating the triggering of the reactive behaviour in advance which in itself contains information on the movement to make. Although the error is nonspecific, the contextual information needed for the reflexive action to generate the appropriate reflex directed to the center of the shape is contained in the reactive layer. Our aim is to model using a complete developmental scenario, how the cerebellum is involved in adaptively modulating reflexive behaviour. Moreover with the cerebellar architecture, we get generalisation to different execution speeds for free since the first trials \cite{herreros2013speed}.  
-
 In the future we will consider of making the human feedback more specific, by for example being able to translate a tactile pattern, while holding the forearm of the iCub, into a correcting direction. We could consider as well using the force feedback sensing of the iCub for this purpose.
+
+Finally, we note that the proposed model can be generalized to any kind of task where an aversive stimuli can be predicted consistently by contextual sensory information and thus be used for robot learning by non-roboticist humans.
+
 
 
 \section{CONCLUSIONS}
