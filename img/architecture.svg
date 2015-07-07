@@ -13,7 +13,7 @@
    height="624.50409"
    id="svg2"
    version="1.1"
-   inkscape:version="0.48.4 r9939"
+   inkscape:version="0.48.5 r10040"
    sodipodi:docname="architecture.svg">
   <defs
      id="defs4">
@@ -157,6 +157,20 @@
          style="fill-rule:evenodd;stroke:#000000;stroke-width:1pt"
          transform="matrix(-0.4,0,0,-0.4,-4,0)" />
     </marker>
+    <marker
+       inkscape:stockid="Arrow1Mend"
+       orient="auto"
+       refY="0"
+       refX="0"
+       id="Arrow1Mend-61"
+       style="overflow:visible">
+      <path
+         id="path3782-03"
+         d="M 0,0 5,-5 -12.5,0 5,5 0,0 z"
+         style="fill-rule:evenodd;stroke:#000000;stroke-width:1pt"
+         transform="matrix(-0.4,0,0,-0.4,-4,0)"
+         inkscape:connector-curvature="0" />
+    </marker>
   </defs>
   <sodipodi:namedview
      id="base"
@@ -166,14 +180,14 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="0.7"
-     inkscape:cx="534.5423"
-     inkscape:cy="205.15974"
+     inkscape:cx="525.22178"
+     inkscape:cy="617.44057"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="false"
-     inkscape:window-width="1535"
-     inkscape:window-height="876"
-     inkscape:window-x="65"
+     inkscape:window-width="1855"
+     inkscape:window-height="1056"
+     inkscape:window-x="1505"
      inkscape:window-y="24"
      inkscape:window-maximized="1"
      fit-margin-top="0"
@@ -188,7 +202,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -197,6 +211,12 @@
      inkscape:groupmode="layer"
      id="layer1"
      transform="translate(192.81942,-2.8449432)">
+    <path
+       style="fill:none;stroke:#000000;stroke-width:4;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;marker-end:url(#Arrow1Mend)"
+       d="M 293.78815,134.87791 66.955979,378.37285"
+       id="path3767-7-8-7"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="cc" />
     <rect
        style="fill:#f2f2f2;fill-opacity:1;stroke:#000000;stroke-width:2;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
        id="rect2985"
@@ -283,13 +303,13 @@
        sodipodi:nodetypes="cc" />
     <path
        style="fill:none;stroke:#000000;stroke-width:4;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;marker-end:url(#Arrow1Mend)"
-       d="m 410.62446,290.38991 0,-125.48227"
+       d="m 410.62446,209.83024 0,-44.9226"
        id="path3767-3-9"
        inkscape:connector-curvature="0"
        sodipodi:nodetypes="cc" />
     <path
        style="fill:none;stroke:#000000;stroke-width:4;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;marker-end:url(#Arrow1Mend)"
-       d="m 574.80595,135.2452 -134.04826,0"
+       d="m 578.08895,135.2452 -137.33126,0"
        id="path3767-7-8"
        inkscape:connector-curvature="0"
        sodipodi:nodetypes="cc" />
@@ -361,7 +381,7 @@
            x="357.59399"
            y="368.48892" /></flowRegion><flowPara
          id="flowPara4659-4"
-         style="font-size:32px;text-align:center;text-anchor:middle">Predicted US</flowPara></flowRoot>    <flowRoot
+         style="font-size:32px;text-align:center;text-anchor:middle">CR</flowPara></flowRoot>    <flowRoot
        xml:space="preserve"
        id="flowRoot3755-5-3-0-2"
        style="font-size:40px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
@@ -373,29 +393,7 @@
            x="357.59399"
            y="368.48892" /></flowRegion><flowPara
          id="flowPara4659-4-7"
-         style="font-size:32px;text-align:center;text-anchor:middle">Motor output</flowPara></flowRoot>    <path
-       sodipodi:type="arc"
-       style="fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:2.5;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
-       id="path4403-9-3"
-       sodipodi:cx="277.28687"
-       sodipodi:cy="290.45462"
-       sodipodi:rx="34.850262"
-       sodipodi:ry="35.607876"
-       d="m 312.13713,290.45462 c 0,19.66569 -15.603,35.60788 -34.85026,35.60788 -19.24727,0 -34.85027,-15.94219 -34.85027,-35.60788 0,-19.66569 15.603,-35.60788 34.85027,-35.60788 19.24726,0 34.85026,15.94219 34.85026,35.60788 z"
-       transform="matrix(0.69277231,0,0,0.67803249,218.5278,37.211106)" />
-    <flowRoot
-       xml:space="preserve"
-       id="flowRoot4407-2-8"
-       style="font-size:40px;font-style:normal;font-weight:normal;text-align:center;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
-       transform="translate(144.65571,-73.877441)"><flowRegion
-         id="flowRegion4409-8-2"><rect
-           id="rect4411-6-2"
-           width="46.214497"
-           height="46.467041"
-           x="242.94168"
-           y="279.09039"
-           style="text-align:center;text-anchor:middle" /></flowRegion><flowPara
-         id="flowPara4413-6-9">x</flowPara></flowRoot>    <flowRoot
+         style="font-size:32px;text-align:center;text-anchor:middle">Motor output</flowPara></flowRoot>    <flowRoot
        xml:space="preserve"
        id="flowRoot3755-5-3-0-6"
        style="font-size:40px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
@@ -410,12 +408,6 @@
          style="font-size:32px;text-align:center;text-anchor:middle">k<flowSpan
    style="font-size:65.00091553%;baseline-shift:sub"
    id="flowSpan4807">noi</flowSpan></flowPara></flowRoot>    <path
-       style="fill:none;stroke:#000000;stroke-width:4;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;marker-end:url(#Arrow1Mend)"
-       d="M 293.78815,134.87791 108.38455,241.22999"
-       id="path3767-7-8-7"
-       inkscape:connector-curvature="0"
-       sodipodi:nodetypes="cc" />
-    <path
        style="fill:none;stroke:#000000;stroke-width:4;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;marker-end:none"
        d="m 386.86432,135.2452 -94.04826,0"
        id="path3767-7-8-6"
@@ -433,5 +425,26 @@
            x="357.59399"
            y="368.48892" /></flowRegion><flowPara
          id="flowPara4659-4-4"
-         style="font-size:32px;text-align:center;text-anchor:middle">error</flowPara></flowRoot>  </g>
+         style="font-size:32px;text-align:center;text-anchor:middle">error</flowPara></flowRoot>    <path
+       style="fill:none;stroke:#000000;stroke-width:1.713;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stroke-miterlimit:4;stroke-dasharray:none"
+       d="m 386.96375,259.31331 c 47.32142,0 47.32142,0 47.32142,0"
+       id="path3063"
+       inkscape:connector-curvature="0" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:1.71300006;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
+       d="m 387.61169,258.95618 22.67858,-49.46429"
+       id="path3065"
+       inkscape:connector-curvature="0" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:1.71300006;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
+       d="M 433.46377,258.95618 410.78519,209.49189"
+       id="path3065-1"
+       inkscape:connector-curvature="0" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:4;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;marker-end:none"
+       d="m 410.62446,293.4638 0,-35.07361"
+       id="path3767-3-9-3"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="cc" />
+  </g>
 </svg>
